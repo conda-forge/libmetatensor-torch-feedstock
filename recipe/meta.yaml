@@ -12,7 +12,7 @@ source:
 build:
   # conda-forge's libtorch is not yet available on Windows
   skip: true  # [win]
-  number: 0
+  number: 1
   script: |
     cmake -G Ninja $CMAKE_ARGS -DBUILD_SHARED_LIBS=ON  .
     cmake --build . --config Release --target install
