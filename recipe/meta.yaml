@@ -1,4 +1,4 @@
-{% set version = "0.5.3" %}
+{% set version = "0.5.4" %}
 {% set url_base = "https://github.com/lab-cosmo/metatensor/releases/download" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: {{ url_base }}/metatensor-torch-v{{ version }}/metatensor-torch-cxx-{{ version }}.tar.gz
-  sha256: 956ff49b49e7ecd6fb63f707d2b928fc32589b72faa389808f97f32d0cf3cf1d
+  sha256: 91f44ffc1ff91cdc0560b8645d55011fa2e3893a4778aa04a768befe0ea9f5cf
 
 build:
   # conda-forge's libtorch is not yet available on Windows
@@ -27,7 +27,7 @@ requirements:
     - cmake
     - ninja
   host:
-    - libmetatensor >=0.1.8,<0.2
+    - libmetatensor >=0.1.10,<0.2
     # We build against the CPU version of torch to not have to deal with CUDA
     # compilers (torch's CMake targets tries to find CUDA compilers even when
     # there is no CUDA code to build). This does not impact the `run`
