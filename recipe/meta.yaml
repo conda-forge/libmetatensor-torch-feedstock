@@ -1,4 +1,4 @@
-{% set version = "0.5.5" %}
+{% set version = "0.6.0" %}
 {% set url_base = "https://github.com/lab-cosmo/metatensor/releases/download" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: {{ url_base }}/metatensor-torch-v{{ version }}/metatensor-torch-cxx-{{ version }}.tar.gz
-  sha256: dac306ab59ac8b59167827405f468397dbf0d4a69988fce7b9f4285f2816a57c
+  sha256: f050743662ece38948b2087dd025d60110645716840dbfc5370c059e1275d0cf
 
 build:
   # conda-forge's libtorch is not yet available on Windows
