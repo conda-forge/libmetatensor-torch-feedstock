@@ -12,7 +12,7 @@ source:
 build:
   # conda-forge's libtorch is not yet available on Windows
   skip: true  # [win]
-  number: 0
+  number: 1
   script: |
     cmake -G Ninja $CMAKE_ARGS -DBUILD_SHARED_LIBS=ON  .
     cmake --build . --config Release --target install
@@ -49,14 +49,14 @@ test:
     - ctest --verbose --test-dir test-project
 
 about:
-  home: https://github.com/lab-cosmo/metatensor
+  home: https://github.com/metatensor/metatensor
   summary: TorchScript/C++ bindings to metatensor
   license: BSD-3-Clause
   license_family: BSD
   license_file:
     - LICENSE
     - _deps/nlohmann_json-src/LICENSE.MIT
-  doc_url: https://lab-cosmo.github.io/metatensor/
+  doc_url: https://docs.metatensor.org
 
 extra:
   recipe-maintainers:
