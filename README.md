@@ -3,13 +3,13 @@ About libmetatensor-torch-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libmetatensor-torch-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/lab-cosmo/metatensor
+Home: https://github.com/metatensor/metatensor
 
 Package license: BSD-3-Clause
 
 Summary: TorchScript/C++ bindings to metatensor
 
-Documentation: https://lab-cosmo.github.io/metatensor/
+Documentation: https://docs.metatensor.org
 
 Current build status
 ====================
