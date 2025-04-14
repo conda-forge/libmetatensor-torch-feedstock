@@ -10,12 +10,7 @@ source:
   sha256: 24611998e076dd0a782a9792f26b315cc57514013715e8a0aedf2a3a891ba1b4
 
 build:
-  # conda-forge's libtorch is not yet available on Windows
-  skip: true  # [win]
-  number: 0
-  script: |
-    cmake -G Ninja $CMAKE_ARGS -DBUILD_SHARED_LIBS=ON  .
-    cmake --build . --config Release --target install
+  number: 1
   run_exports:
     - {{ pin_subpackage('libmetatensor-torch', max_pin='x.x') }}
 
@@ -43,10 +38,11 @@ test:
   files:
     - test-project/
   commands:
-    - test -f $PREFIX/lib/libmetatensor_torch$SHLIB_EXT
+    - test -f $PREFIX/lib/libmetatensor_torch$SHLIB_EXT  # [not win]
+    - if not exist %PREFIX%\\Library\\bin\\metatensor_torch.dll exit 1  # [win]
     - cmake -G Ninja -S test-project -B test-project
     - cmake --build test-project
-    - ctest --verbose --test-dir test-project
+    - ctest --verbose --output-on-failure --test-dir test-project
 
 about:
   home: https://github.com/metatensor/metatensor
