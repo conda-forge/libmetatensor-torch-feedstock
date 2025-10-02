@@ -28,6 +28,9 @@ requirements:
     # there is no CUDA code to build). This does not impact the `run`
     # dependency, since libtorch `run_exports` are variant agnostic
     - libtorch * cpu*
+    # Also add a standard libtorch dependency to make sure it is taken into
+    # account by migrations
+    - libtorch
 
 test:
   requires:
