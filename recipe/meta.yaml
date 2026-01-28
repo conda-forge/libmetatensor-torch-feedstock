@@ -1,4 +1,4 @@
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 {% set url_base = "https://github.com/lab-cosmo/metatensor/releases/download" %}
 
 package:
@@ -7,10 +7,10 @@ package:
 
 source:
   url: {{ url_base }}/metatensor-torch-v{{ version }}/metatensor-torch-cxx-{{ version }}.tar.gz
-  sha256: aead508d5300779a99ba4f624a13e84881686c9a4a74df4263388005d5d265c1
+  sha256: 7d6d7610008840bee8ccfdca23579bcfb3050ef00b32b59451d7f4765c854f2f
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libmetatensor-torch', max_pin='x.x') }}
 
