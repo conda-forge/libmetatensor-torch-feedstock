@@ -10,7 +10,7 @@ source:
   sha256: 3df87a8e7c87246be534b2435fcfd257bf3296377f4ae1a3d925c1d429252989
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libmetatensor-torch', max_pin='x.x') }}
 
